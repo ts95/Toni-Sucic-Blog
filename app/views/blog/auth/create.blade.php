@@ -18,3 +18,11 @@
 		{{ Form::submit('Publish', ['class' => 'btn btn-primary']) }}
 	{{ Form::close() }}
 @stop
+
+@section('js')
+<script>
+	$(function() {
+		window.dotsGenerator.stop();
+	});
+</script>
+@stop

@@ -43,7 +43,7 @@ var DotsGenerator = (function($) {
 
 			$($dotContainer).append($dot.fadeIn(1000));
 
-			$dot.fadeOut($.randInt(10000, 15000), function() {
+			$dot.fadeOut($.randInt(5000, 5000 * 2), function() {
 				$(this).remove();
 			});
 		};

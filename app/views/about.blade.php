@@ -18,7 +18,7 @@
 		<p>
 			This blog was built with the <a target="_blank" href="http://laravel.com">Laravel™</a>
 			framework. The source code is available
-			<a target="_blank" href="https://github.com/ts95/Toni-Sucic-Blog"> here.
+			<a target="_blank" href="https://github.com/ts95/Toni-Sucic-Blog">here</a>.
 		</p>
 	</p>
 @stop
