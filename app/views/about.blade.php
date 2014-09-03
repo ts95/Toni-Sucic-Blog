@@ -15,7 +15,10 @@
 		<a class="github" target="_blank" href="https://github.com/ts95">
 			<img width="100px" class="img-responsive" src="/img/github.png">ts95</a>
 		<br>
-		<p>This blog was built with the <a target="_blank" href="http://laravel.com">Laravel™</a>
-			framework.</p>
+		<p>
+			This blog was built with the <a target="_blank" href="http://laravel.com">Laravel™</a>
+			framework. The source code is available
+			<a target="_blank" href="https://github.com/ts95/Toni-Sucic-Blog"> here.
+		</p>
 	</p>
 @stop
