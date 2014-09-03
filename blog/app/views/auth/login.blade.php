@@ -9,7 +9,7 @@
 		{{ Form::token() }}
 		<div class="form-group">
 			{{ Form::label('email', 'E-Mail Address') }}
-			{{ Form::text('email', null, ['class' => 'form-control']) }}
+			{{ Form::text('email', null, ['class' => 'form-control', 'autofocus' => 'autofocus']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('password', 'Password') }}

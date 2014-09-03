@@ -20,8 +20,8 @@
 <body>
 	<div class="container">
 		<div class="sidepane col-md-3">
-			<h1 class="text-center" style="font-weight: 200;">Toni Sučić</h1>
-			<h3 class="text-center text-muted" style="font-weight: 200;">A blog, mainly about programming.</h3>
+			<h1 class="text-center">Toni Sučić</h1>
+			<h3 class="text-center text-muted">A blog, mainly about programming.</h3>
 			<hr>
 			<div class="menu">
 				<a href="{{ URL::action('BlogController@posts') }}">Posts</a>
@@ -33,7 +33,7 @@
 		<div class="mainpane col-md-9">
 			<div class="content">
 				@if(Session::get('message'))
-					<h4>{{ Session::get('message') }}</h4>
+					<div class="alert">{{ Session::get('message') }}</div>
 				@endif
 				@yield('content')
 			</div>

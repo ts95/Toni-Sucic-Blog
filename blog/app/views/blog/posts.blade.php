@@ -8,6 +8,15 @@
 	<h1>Blog posts</h1>
 	<hr>
 
+	@if(Auth::check())
+		<span>Logged in as {{ Auth::user()->name }}</span>
+		&middot;
+		<a href="{{ URL::action('BlogController@create') }}">New post</a>
+		&middot;
+		<a href="{{ URL::action('AuthController@logout') }}">Log out</a>
+		<hr>
+	@endif
+
 	@if($posts->count() === 0)
 		<h2>There are no posts currently.</h2>
 	@endif
