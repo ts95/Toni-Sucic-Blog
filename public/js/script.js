@@ -1,6 +1,6 @@
 $(function() {
-	window.dotsGenerator = new DotsGenerator(1.5, $('.sidepane'));
-	window.dotsGenerator.generateDots();
+	window.dotGenerator = new DotGenerator(1.5, $('.sidepane'));
+	window.dotGenerator.generateDots();
 
 	setTimeout(function() {
 		$('.alert').fadeOut(1000, function() {

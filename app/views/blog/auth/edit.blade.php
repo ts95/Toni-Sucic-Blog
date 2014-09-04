@@ -28,7 +28,7 @@
 @section('js')
 <script>
 	$(function() {
-		window.dotsGenerator.stop();
+		window.dotGenerator.stop();
 	});
 </script>
 @stop

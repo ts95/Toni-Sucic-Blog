@@ -1,4 +1,4 @@
-var DotsGenerator = (function($) {
+var DotGenerator = (function($) {
 	'use strict';
 
 	function randomRGB() {

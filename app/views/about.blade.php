@@ -20,5 +20,9 @@
 			framework. The source code is available
 			<a target="_blank" href="https://github.com/ts95/Toni-Sucic-Blog">here</a>.
 		</p>
+		<p>
+			<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=ts95&repo=Toni-Sucic-Blog&limit=10"
+  			allowtransparency="true" frameborder="0" scrolling="no" width="502px" height="252px"></iframe>
+		</p>
 	</p>
 @stop
