@@ -13,7 +13,7 @@
 		</div>
 		<div class="form-group">
 			{{ Form::label('body', 'Body') }}
-			{{ Form::textarea('body', null, ['class' => 'form-control']) }}
+			{{ Form::textarea('body', null, ['class' => 'form-control', 'size' => '50x15']) }}
 		</div>
 		{{ Form::submit('Publish', ['class' => 'btn btn-primary']) }}
 	{{ Form::close() }}
