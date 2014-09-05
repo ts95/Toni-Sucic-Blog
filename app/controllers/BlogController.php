@@ -47,7 +47,7 @@ class BlogController extends BaseController {
 	public function edit($id) {
 		$post = Post::find($id);
 
-		if (Auth::id() !== $post->user_id) {
+		if (Auth::id() != $post->user_id) {
 			return Redirect::action('BlogController@view', [$post->slug])->with('message', "You can't edit this post.");
 		}
 
