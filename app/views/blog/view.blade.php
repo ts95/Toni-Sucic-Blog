@@ -6,7 +6,7 @@
 @section('content')
 	<article class="post">
 		<h1 class="post-title">{{ $post->title }}
-			@if(Auth::check() and (Auth::id() === $post->user_id))
+			@if(Auth::check() and (Auth::id() == $post->user_id))
 				<span><a class="btn btn-md btn-link" href="{{ URL::action('BlogController@edit', [$post->id]) }}">Edit</a></span>
 			@endif
 		</h1>

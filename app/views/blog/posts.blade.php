@@ -17,7 +17,7 @@
 		<hr>
 	@endif
 
-	@if($posts->count() === 0)
+	@if($posts->count() == 0)
 		<h2>There are no posts currently.</h2>
 	@endif
 

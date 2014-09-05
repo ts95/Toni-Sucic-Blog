@@ -26,23 +26,22 @@ Route::get('/blog/view/{slug}', [
 	'uses'	=> 'BlogController@view',
 ]);
 
-Route::any('/blog/auth/create', [
-	'as'		=> 'blog.auth.create',
-	'before'	=> 'auth',
-	'uses'		=> 'BlogController@create',
-]);
+Route::group(['before' => 'auth'], function() {
+	Route::any('/blog/auth/create', [
+		'as'		=> 'blog.auth.create',
+		'uses'		=> 'BlogController@create',
+	]);
 
-Route::any('/blog/auth/edit/{id}', [
-	'as'		=> 'blog.auth.edit',
-	'before'	=> 'auth',
-	'uses'		=> 'BlogController@edit',
-]);
+	Route::any('/blog/auth/edit/{id}', [
+		'as'		=> 'blog.auth.edit',
+		'uses'		=> 'BlogController@edit',
+	]);
 
-Route::get('/blog/auth/delete/{id}', [
-	'as'		=> 'blog.posts',
-	'before'	=> 'auth',
-	'uses'		=> 'BlogController@delete',
-]);
+	Route::get('/blog/auth/delete/{id}', [
+		'as'		=> 'blog.posts',
+		'uses'		=> 'BlogController@delete',
+	]);
+});
 
 /*
 |---------------------------------------------------------------------------
