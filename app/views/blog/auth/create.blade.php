@@ -12,6 +12,10 @@
 			{{ Form::text('title', null, ['class' => 'form-control', 'autofocus' => 'autofocus']) }}
 		</div>
 		<div class="form-group">
+			{{ Form::label('slug', 'Slug (Optional)') }}
+			{{ Form::text('slug', null, ['class' => 'form-control']) }}
+		</div>
+		<div class="form-group">
 			{{ Form::label('body', 'Body') }}
 			{{ Form::textarea('body', null, ['class' => 'form-control', 'size' => '50x15']) }}
 		</div>

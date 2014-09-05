@@ -9,7 +9,7 @@
 		{{ Form::token() }}
 		<div class="form-group">
 			{{ Form::label('title', 'Title') }}
-			{{ Form::text('title', $post->title, ['class' => 'form-control', 'autofocus' => 'autofocus']) }}
+			{{ Form::text('title', $post->title, ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('slug', 'Slug') }}
@@ -17,7 +17,7 @@
 		</div>
 		<div class="form-group">
 			{{ Form::label('body', 'Body') }}
-			{{ Form::textarea('body', $post->body, ['class' => 'form-control', 'size' => '50x15']) }}
+			{{ Form::textarea('body', $post->body, ['class' => 'form-control', 'size' => '50x15', 'autofocus' => 'autofocus']) }}
 		</div>
 		<a class="btn btn-default" href="{{ URL::action('BlogController@view', $post->slug) }}">Back</a>
 		<a class="btn btn-danger" href="{{ URL::action('BlogController@delete', $post->id) }}">Delete</a> 

@@ -22,7 +22,7 @@ class BlogController extends BaseController {
 		if ($validator->passes()) {
 			$id = Auth::id();
 			$title = $input['title'];
-			$slug = Str::slug($title);
+			$slug = empty($input['slug']) ? Str::slug($title) : Str::slug($input['slug']);
 			$body = $input['body'];
 
 			if (Post::where('slug', $slug)->count() !== 0) {
@@ -41,7 +41,7 @@ class BlogController extends BaseController {
 
 		$errors = implode('<br>', $validator->messages()->all());
 
-		return Redirect::back()->with('message', $errors);
+		return Redirect::back()->withInput()->with('message', $errors);
 	}
 
 	public function edit($id) {
@@ -59,7 +59,7 @@ class BlogController extends BaseController {
 
 		$validator = Validator::make($input, [
 			'title'	=> 'required|min:2|max:100',
-			'body'	=> 'required|min:20',
+			'body'	=> 'required|min:10',
 		]);
 
 		if ($post->slug !== $input['slug']) {
@@ -70,7 +70,7 @@ class BlogController extends BaseController {
 
 		if ($validator->passes()) {
 			$post->title = $input['title'];
-			$post->slug = $input['slug'];
+			$post->slug = Str::slug($input['slug']);
 			$post->body = $input['body'];
 			$post->save();
 
@@ -85,7 +85,7 @@ class BlogController extends BaseController {
 	public function delete($id) {
 		$post = Post::find($id);
 
-		if (Auth::id() !== $post->user_id and Auth::id() !== 1) {
+		if (Auth::id() != $post->user_id and Auth::id() != 1) {
 			return Redirect::action('BlogController@view', [$post->slug])->with('message', "You can't delete this post.");
 		}
 
@@ -93,7 +93,7 @@ class BlogController extends BaseController {
 
 		$post->delete();
 
-		return Redirect::action('BlogController@posts')->with('message', "Post with the title \"$title\" has been deleted.");
+		return Redirect::action('BlogController@posts')->with('message', "\"$title\" has been deleted.");
 	}
 
 	public function posts() {
