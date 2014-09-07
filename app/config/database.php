@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => getenv('LARAVEL_DEV_DB') ? getenv('LARAVEL_DEV_DB') : 'mysql',
+	'default' => getenv('LARAVEL_LOCAL') ? 'mysql-dev' : 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------

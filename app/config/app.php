@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => getenv('LARAVEL_LOCAL') ? true : false,
 
 	/*
 	|--------------------------------------------------------------------------

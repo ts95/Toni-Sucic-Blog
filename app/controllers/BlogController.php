@@ -25,7 +25,7 @@ class BlogController extends BaseController {
 			$slug = empty($input['slug']) ? Str::slug($title) : Str::slug($input['slug']);
 			$body = $input['body'];
 
-			if (Post::where('slug', $slug)->count() !== 0) {
+			if (Post::where('slug', $slug)->count() != 0) {
 				$slug .= '-'.substr((string)time(), 5);
 			}
 
